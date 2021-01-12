@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload page</title>
+    <link rel="stylesheet" href="uploadpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+</head>
+<body>
+
+
+
+    <div class="background">
+    <div class="upcontainer">
+
+        <div class="uploadheader">
+
+
+            <div class="uplogo">
+                <img src="mlogo.png" height="138" width="138" alt="">
+            </div>
+
+            <a href="classifiedwebsite.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="uploadfile">
+            
+            <form action="/action_page.php">
+
+                <h2>INCLUDE SOME DETAILS</h2>
+
+                <label for="name">Name</label>
+                <input type="text" class="name" id="name" placeholder="Name">
+
+                <label for="company">Company</label>
+                <input type="text" class="company" id="company" placeholder="Company">
+
+                <label for="model">Model number</label>
+                <input type="number" id="model" name="model" placeholder="Model number">
+
+                <label for="city">City</label>
+                <select id="city" name="city">
+                    <option value="karachi">Karachi</option>
+                    <option value="karachi">Karachi</option>
+                    <option value="karachi">Karachi</option>
+                    <option value="karachi">Karachi</option>
+                </select>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+
+
+                <label for="rate">Set a price</label>
+                <input type="number" id="Price" name="rate" placeholder="Enter price">
+
+                <label for="discription">Discription</label>
+                <textarea id="discription" name="discription" placeholder="Write something..." style="height: 250px;" ></textarea>
+
+                
+                <input type="file" id="myfile" name="filename" placeholder="upload photo"><br><br>
+                <input type="submit">
+            </form>
+        </div>
+
+        
+    </div>
+    </div>
+
+</body>
+</html>

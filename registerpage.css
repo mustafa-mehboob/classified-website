@@ -1,0 +1,159 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color:  #ffff;
+}
+
+
+.registerheader{
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    font-size: auto;
+    background-color: lightsteelblue; /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgb(14, 14, 75), rgb(91, 145, 216));
+}
+
+.registerheader a {
+    position: absolute;
+    background-color: white;
+    top: 8px;
+    left: 2px;
+    height: 65; 
+    width: 13;  
+    padding: 10px 20px; 
+}
+.registerheader .rglogo {
+    text-align: center;
+}
+
+
+.form{
+    position: relative;
+    background: whitesmoke;
+    z-index: 1;
+    padding: 25px;
+    max-width: 560px;
+    margin: 0 auto 100px;
+}
+
+.formlogo {
+    
+}
+.form p {
+    text-align: center;
+}
+
+.form input{
+    font-family: "Roboto" , sans-serif;
+    outline: 1;
+    background: 1px solid #ccc;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+
+
+}
+
+.form-info{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-info input:focus{
+    outline: o;
+    border-color: #777;
+}
+
+.message {
+    background-color: ;
+}
+
+.form-info.success input{
+    border-color: #2ecc71;
+}
+
+.form-info.error input{
+    border-color: #e74373;
+}
+
+.form-info i{
+    position: absolute;
+    right: 2%;
+    top: 21%;
+    visibility: hidden;
+}
+
+.form-info.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-info.error i.fa-exclamation-circle{
+    color: #e74373;
+    visibility: visible;
+}
+
+.form-info small{
+    color: #e74373;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+.form-info.error small{
+    visibility: visibles;
+}
+
+
+.form button{
+    font-family: "Roboto" , sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    padding: 15px;
+    color: #ffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form button:hover,.form button:active{
+    background: #43A047;
+}
+
+.form .message a{
+    color:  blue;
+    text-decoration: none;
+}
+
+.signup-form h2 {
+    text-align: center;
+}
+.register-form h2 {
+    text-align: center;
+}
+
+.form .register-form{
+    display: none;
+}
+

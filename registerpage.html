@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-page</title>
+    <link rel="stylesheet" href="classifiedwebsite.css">
+    <link rel="stylesheet" href="registerpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+</head>
+<body>
+
+
+
+
+
+
+    <div class="background">
+
+        <div class="registerheader">
+
+
+            <div class="rglogo">
+                <img src="mlogo.png" height="138" width="138" alt="" >
+            </div>
+
+            <a href="classifiedwebsite.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="login-page">
+            <div class="form">
+
+                <form class="register-form" id="rigister-form">
+
+                    <h2>Login</h2>
+
+                    <div class="form-info">
+                    <label for="username">Username</label>
+                    <input type="text" name="" id="isername" placeholder="Enter username" autocomplete="off" /><br>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>err msg</small>
+                    </div>
+
+                    <div class="form-info">
+                    <label class="email">Email</label>
+                    <input type="email" name="" id="email" placeholder="Enter email" autocomplete="off"/><br>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>err msg</small>
+                    </div>
+
+                    <div class="form-info">
+                    <label class="number">Number</label>
+                    <input type="number" name="" id="number" placeholder="Enter number" autocomplete="off"/><br>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>err msg</small>
+                    </div>
+
+                    <div class="form-info">
+                    <label class="password">Passord</label>
+                    <input type="password" name="" id="password" placeholder="Enter password" autocomplete="off"/><br>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>err msg</small>
+                    </div>
+                    
+                    <div class="form-info">
+                    <label class="confirmpassord">Confirm password</label>
+                    <input type="password" name="" id="confirmpassword" placeholder="Confirm password" autocomplete="off"/><br>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>err msg</small>
+                    </div>
+
+                    <button class="button">Create</button><br>
+
+                    <p class="message" id="message">Already Register?<a href="#" >Register</a></p>
+  
+                </form>
+
+                <form class="signup-form" id="signup-form">
+  
+                    <h2>Sigin</h2>
+  
+                    <input type="text" placeholder="username or email" /><br>
+                    <input type="password" placeholder="Enter password"/><br>
+                    <button class="button">sign up</button><br>
+
+                    <p class="message" id="message" >Not Register?<a href="#">Login</a></p>
+
+                </form>
+  
+
+            </div>
+        </div>  
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    $('.message a').click(function(){
+        $('form').animate({height: "toggle" , opacity: "toggle"}, "medium");
+    });
+    </script>
+    
+    <script type="text/javascript">
+    const usernamevalue  = document.getElementById('username');
+    const emailvalue = document.getElementById('email');
+    const numbervalue = document.getElementById('number');
+    const passwordvalue = document.getElementById('password');
+    const confirmpasswordvalue  = document.getElementById('confirmpassword');
+    const registerform = document.getElementById('rigister-form');
+
+     // add event
+    registerform.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const validate = () => {
+        const usernamevalue = username.value.trim();
+        const emailvalue = email.value.trim();
+        const numbervalue = number.value.trim();
+        const passwordvalue = password.value.trim();
+        const confirmpasswordvalue = confirmpassword.value.trim();
+    }
+    })
+
+    function setErrorMsg(input , errormsgs) {
+        const forminfo = input.parentElemant;
+        const small = forminfo.querySlector('small');
+        forminfo.className = "form-info error";
+        small.innerText = errormsgs;
+    }
+
+    function setSuccessMsg(input) {
+        const forminfo = input.parentElemant;
+        forminfo.className = "form-info success";
+    }
+
+
+    // validate username
+    if (usernamevalue === "") { 
+        setErrorMsg(usernamevalue, 'username cannot be blank');
+    }
+
+    else{
+        setSuccessMsg(usernamevalue);
+    }
+    // validate email
+    if (emailvalue === "") {
+        setErrorMsg(email,'email caonnot be blank');
+    }
+    else{
+        setSuccessMsg(emailvalue);
+    }
+    // validate number
+    if (numbervalue === "") {
+        setErrorMsg(numbervalue,'number cannot be blank');
+    }
+    else if (numbervalue.lenght != 11) {
+        setErrorMsg(numbervalue,'number min 12');
+    }
+    else{
+        setSuccessMsg(numbervalue);
+    }
+    // add password
+    if (passwordvalue === "") {
+        setErrorMsg(passwordvalue,'password cannot be blank');
+    }
+    else if (passwordvalue.lenght <=5) {
+        setErrorMsg(passwordvalue,'minimun 6');
+    }
+    else {
+        setSuccessMsg(passwordvalue);
+    }
+    if (confirmpasswordvalue === "") {
+        setErrorMsg(confirmpasswordvalue,'password cannot be blank');
+    }
+    else if (confirmpasswordvalue !== confirmpasswordvalue) {
+        setErrorMsg(confirmpasswordvalue,'password cannot be same');
+    }
+    else {
+        setSuccessMsg(confirmpasswordvalue);
+    }
+
+
+
+    </script>
+
+    
+
+</body>
+</html>

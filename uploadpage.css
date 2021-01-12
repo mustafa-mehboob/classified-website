@@ -1,0 +1,93 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+body{box-sizing: border-box;}
+
+.uploadheader{
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    font-size: auto;
+    background-color: lightsteelblue; /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgb(14, 14, 75), rgb(91, 145, 216));
+}
+
+.uploadheader a {
+    position: absolute;
+    background-color: white;
+    top: 8px;
+    left: 2px;
+    height: 65; 
+    width: 30; 
+    padding: 10px 20px; 
+}
+.uploadheader .uplogo {
+    text-align: center;
+}
+
+.uploadfile {
+    position: relative;
+    border-radius: 5px;
+    padding: 40px;
+    max-width: 560px;
+    margin: 0 auto 100px;
+    background-color: whitesmoke;
+}
+
+.uploadfile h2{
+    text-align: center;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+
+  input[type=file], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
