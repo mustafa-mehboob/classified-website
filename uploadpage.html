@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,46 +27,85 @@
 
         <div class="uploadfile">
             
-            <form action="/action_page.php">
+            <form name="upform" method="POST">
 
                 <h2>INCLUDE SOME DETAILS</h2>
 
                 <label for="name">Name</label>
-                <input type="text" class="name" id="name" placeholder="Name">
+                <input type="text" class="name" id="name" placeholder="name" required/>
 
                 <label for="company">Company</label>
-                <input type="text" class="company" id="company" placeholder="Company">
+                <input type="text" class="company" id="company" placeholder="Company"/>
 
-                <label for="model">Model number</label>
-                <input type="number" id="model" name="model" placeholder="Model number">
+                <label for="model">Model year</label>
+                <input type="number" id="model" name="model" placeholder="Model number" required/>
 
-                <label for="city">City</label>
+                <label for="city">Registered in</label>
                 <select id="city" name="city">
-                    <option value="karachi">Karachi</option>
-                    <option value="karachi">Karachi</option>
-                    <option value="karachi">Karachi</option>
-                    <option value="karachi">Karachi</option>
+                    <option value="karachi">Sindh</option>
+                    <option value="karachi">Punjab</option>
+                    <option value="karachi">Balochistan</option>
+                    <option value="karachi">K.P.K</option>
                 </select>
 
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
+                <label for="address">Location</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required/>
 
 
                 <label for="rate">Set a price</label>
-                <input type="number" id="Price" name="rate" placeholder="Enter price">
+                <input type="number" id="rate" name="rate" placeholder="Enter price" required/>
 
                 <label for="discription">Discription</label>
                 <textarea id="discription" name="discription" placeholder="Write something..." style="height: 250px;" ></textarea>
 
                 
-                <input type="file" id="myfile" name="filename" placeholder="upload photo"><br><br>
-                <input type="submit">
+                <input type="file" id="myfile" name="filename" placeholder="upload photo"/><br><br>
+                <button type="submit" class="sbutton" id="sbutton">Submit</button>
             </form>
         </div>
 
         
     </div>
     </div>
+
+    <div id="msg">
+        <pre></pre>
+    </div>
+
+    <script>
+        
+        let posts = [];
+
+        const addpost = (ev)=>{
+            ev.preventDefault();  // to stop the form submit
+            let post = {
+                id : Date.now(),
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                model: document.getElementById('model').value,
+                city: document.getElementById('city').value,
+                address: document.getElementById('address').value,
+                rate: document.getElementById('rate').value,
+                discription: document.getElementById('discription').value,
+                myfile: document.getElementById('myfile').value
+            }
+            posts.push(post);
+            document.forms[0].reset(); // to clear the form for the next entries
+            // document.querySelector('form').reset();
+
+            console.warn('added' , {posts} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '/n' + JSON.stringify(posts, '/t' , 2);
+
+            // saving to localStorage
+            localStorage.setItem('adsPostList' , JSON.stringify(posts) );
+
+        }
+
+        document.addEventListener('DOMContentLoaded' , ()=>{
+            document.getElementById('sbutton').addEventListener('click' , addpost);
+        });
+    </script>
 
 </body>
 </html>

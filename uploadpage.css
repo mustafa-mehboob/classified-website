@@ -76,18 +76,16 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     resize: vertical;
   }
-  
 
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    width: 100%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
+.sbutton {
+  background-color: #4CAF50;
+  color: white;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sbutton:hover {
+  background-color: #45a049;
+}

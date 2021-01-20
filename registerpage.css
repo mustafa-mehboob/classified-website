@@ -39,6 +39,7 @@ body{
     height: 65; 
     width: 13;  
     padding: 10px 20px; 
+
 }
 .registerheader .rglogo {
     text-align: center;
@@ -66,7 +67,6 @@ body{
     outline: 1;
     background: 1px solid #ccc;
     width: 100%;
-    border: 0;
     margin: 0 0 15px;
     padding: 20px;
     box-sizing: border-box;
@@ -75,12 +75,12 @@ body{
 
 }
 
-.form-info{
+.forminfo{
     margin-bottom: 20px;
     position: relative;
 }
 
-.form-info input:focus{
+.forminfo input:focus{
     outline: o;
     border-color: #777;
 }
@@ -89,40 +89,32 @@ body{
     background-color: ;
 }
 
-.form-info.success input{
+.forminfo.success input{
     border-color: #2ecc71;
 }
 
-.form-info.error input{
+.forminfo.error input{
     border-color: #e74373;
 }
 
-.form-info i{
+.forminfo i{
     position: absolute;
     right: 2%;
-    top: 21%;
+    top: 40%;
     visibility: hidden;
 }
 
-.form-info.success i.fa-check-circle{
+.forminfo.success i.fa-check-circle{
     color: #2ecc71;
     visibility: visible;
 }
 
-.form-info.error i.fa-exclamation-circle{
+.forminfo.error i.fa-exclamation-circle{
     color: #e74373;
     visibility: visible;
 }
 
-.form-info small{
-    color: #e74373;
-    position: absolute;
-    left: 0;
-    visibility: hidden;
-}
-.form-info.error small{
-    visibility: visibles;
-}
+
 
 
 .form button{
