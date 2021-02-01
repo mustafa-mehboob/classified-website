@@ -24,49 +24,39 @@
                 <img src="mlogo.png" height="138" width="138" alt="" >
             </div>
 
-            <a href="classifiedwebsite.html"><i class="fas fa-arrow-left"></i></a>
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
         </div>
 
         <div class="login-page">
             <div class="form">
 
-                <form class="register-form " id="rigister-form" action="/action_page.php" method="POST">
+                <form class="register-form " id="rigister-form" onclick="login(event)" method="POST">
 
                     <h2>Login</h2>
 
                     <div class="forminfo error" id="forminfo">
                     <label for="username">Username</label>
                     <input type="text" name="" class="username" id="username" placeholder="Enter username" autocomplete="off" required/><br>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
                     </div>
 
                     <div class="forminfo error" id="forminfo">
                     <label class="email">Email</label>
                     <input type="email" name="" class="email" id="email" placeholder="Enter email" autocomplete="off" required/><br>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
                     </div>
 
                     <div class="forminfo error" id="forminfo">
                     <label class="number">Number</label>
                     <input type="number" name="" id="number" class="number" placeholder="Enter number" autocomplete="off" required/><br>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
                     </div>
 
                     <div class="forminfo error"id="forminfo">
                     <label class="password">Passord</label>
                     <input type="password" name="" id="password" class="password" placeholder="Enter password" autocomplete="off" required/><br>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
                     </div>
                     
                     <div class="forminfo error" id="forminfo">
                     <label class="confirmpassord">Confirm password</label>
                     <input type="password" name="" class="confirmpassword" id="confirmpassword" placeholder="Confirm password" autocomplete="off" required/><br>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
                     </div>
 
                     <button class="button">Create</button><br>
@@ -75,12 +65,12 @@
   
                 </form>
 
-                <form class="signup-form" id="signup-form">
+                <form class="signup-form" id="signup-form" onclick="signup(event)">
   
                     <h2>Sigin</h2>
   
-                    <input type="email" placeholder="username or email" required /><br>
-                    <input type="password" placeholder="Enter password" required/><br>
+                    <input type="email" placeholder="username or email" id="semail" required /><br>
+                    <input type="password" placeholder="Enter password" id="spassword" required/><br>
                     <button class="button">sign up</button><br>
 
                     <p class="message" id="message" >Not Register?<a href="#">Login</a></p>
@@ -100,87 +90,35 @@
     </script>
 
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js">
-    const usernamevalue  = document.getElementById('username');
-    const emailvalue = document.getElementById('email');
-    const numbervalue = document.getElementById('number');
-    const passwordvalue = document.getElementById('password');
-    const confirmpasswordvalue  = document.getElementById('confirmpassword');
-    const registerform = document.getElementById('rigister-form');
-
-
+    <script type="text/javascript">
     
-
-     // add event
-    registerform.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const validate = () => {
-        const usernamevalue = username.value.trim();
-        const emailvalue = email.value.trim();
-        const numbervalue = number.value.trim();
-        const passwordvalue = password.value.trim();
-        const confirmpasswordvalue = confirmpassword.value.trim();
-        const forminfovalue = forminfo;
-    }
-    });
-
-
-    function setErrorMsg(input) {
-        const forminfo = input.parentElemant;
-        forminfo.className = ("forminfo error");
+    // for login page
+    const login = e => {
+        let formData = {
+            usernamevalue  : document.getElementById('username').value,
+            emailvalue : document.getElementById('email').value,
+            passwordvalue : document.getElementById('password').value,
+            numbervalue : document.getElementById('number').value,
+            confirmpasswordvalue  : document.getElementById('confirmpassword').value,
+            registerform : document.getElementById('rigister-form').value
+        }
+        
+        // saving to local storage
+        localStorage.setItem('formData',JSON.stringify(formData));
+        e.preventDefault();
     }
 
-    function setSuccessMsg(input) {
-        const forminfo = input.parentElement;
-        forminfo.className = "forminfo success";
-    }
+    // foe signup page
+    const signup = e =>{
+        let signupData = {
+            email : document.getElementById('semail').value,
+            password : document.getElementById('spassword').value
+        }
 
-
-    // validate username
-    if (usernamevalue === "") { 
-        setErrorMsg(usernamevalue, 'username cannot be blank');
+        // saving to local storage
+        localStorage.setItem('signupData',JSON.stringify(signupData));
+        e.preventDefault();
     }
-
-    else{
-        setSuccessMsg(usernamevalue);
-    }
-    // validate email
-    if (emailvalue === "") {
-        setErrorMsg(email,'email caonnot be blank');
-    }
-    else{
-        setSuccessMsg(emailvalue);
-    }
-    // validate number
-    if (numbervalue === "") {
-        setErrorMsg(numbervalue,'number cannot be blank');
-    }
-    else if (numbervalue.lenght != 11) {
-        setErrorMsg(numbervalue,'number min 12');
-    }
-    else{
-        setSuccessMsg(numbervalue);
-    }
-    // add password
-    if (passwordvalue === "") {
-        setErrorMsg(passwordvalue,'password cannot be blank');
-    }
-    else if (passwordvalue.lenght <=5) {
-        setErrorMsg(passwordvalue,'minimun 6');
-    }
-    else {
-        setSuccessMsg(passwordvalue);
-    }
-    if (confirmpasswordvalue === "") {
-        setErrorMsg(confirmpasswordvalue,'password cannot be blank');
-    }
-    else if (confirmpasswordvalue !== confirmpasswordvalue) {
-        setErrorMsg(confirmpasswordvalue,'password cannot be same');
-    }
-    else {
-        setSuccessMsg(confirmpasswordvalue);
-    }
-
 
     </script>
 

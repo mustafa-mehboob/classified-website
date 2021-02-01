@@ -22,7 +22,7 @@
                 <img src="mlogo.png" height="138" width="138" alt="">
             </div>
 
-            <a href="classifiedwebsite.html"><i class="fas fa-arrow-left"></i></a>
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
         </div>
 
         <div class="uploadfile">
@@ -68,8 +68,8 @@
     </div>
     </div>
 
-    <div id="msg">
-        <pre></pre>
+    <div id="msg" class="formdata" >
+        <form class="formdata"></form>
     </div>
 
     <script>
@@ -94,8 +94,8 @@
             // document.querySelector('form').reset();
 
             console.warn('added' , {posts} );
-            let pre = document.querySelector('#msg pre');
-            pre.textContent = '/n' + JSON.stringify(posts, '/t' , 2);
+            let form = document.querySelector('#msg form');
+            form.textContent = '/n' + JSON.stringify(posts, '/t' , 2);
 
             // saving to localStorage
             localStorage.setItem('adsPostList' , JSON.stringify(posts) );
